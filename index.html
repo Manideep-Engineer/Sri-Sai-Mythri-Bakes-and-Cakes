@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Sri Sai Mythri Bakes & Cakes | Suraram, Hyderabad</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --primary: #9b1c2b;        /* Rich Bakery Maroon */
+      --primary-dark: #6e0e1a;
+      --accent-gold: #e67e22;    /* Warm Baked Crust Orange */
+      --bg-cream: #fdfaf6;       /* Warm background */
+      --card-bg: #ffffff;
+      --text-dark: #22201e;
+      --text-muted: #6e6761;
+      --whatsapp-color: #25d366;
+      --swiggy-color: #fc8019;
+      --zomato-color: #e23744;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      padding-bottom: 95px;
+    }
+
+    /* --- STICKY NAV --- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(230, 126, 34, 0.25);
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .call-btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.5rem 0.95rem;
+      background: #fff;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      border-radius: 99px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .wa-btn-nav {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--whatsapp-color);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.35);
+    }
+
+    /* --- HERO BANNER --- */
+    .hero {
+      text-align: center;
+      padding: 2.2rem 1.2rem 1.5rem;
+      background: radial-gradient(circle at 50% 20%, #ffeedd 0%, var(--bg-cream) 75%);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      padding: 0.35rem 0.85rem;
+      border-radius: 30px;
+      border: 1px solid rgba(230, 126, 34, 0.35);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #b45309;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.95rem;
+      color: var(--primary);
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 1.2rem;
+    }
+
+    /* Delivery Partner Buttons (Swiggy & Zomato) */
+    .delivery-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .partner-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.65rem 1.3rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .partner-btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-swiggy {
+      background-color: var(--swiggy-color);
+    }
+
+    .btn-zomato {
+      background-color: var(--zomato-color);
+    }
+
+    /* --- MAIN CONTENT WRAP --- */
+    .main-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem;
+      color: var(--primary);
+      margin: 2.2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-title span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* --- BAKERY GRID --- */
+    .bakery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #fae6d2;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(155, 28, 43, 0.9);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.25rem 0.55rem;
+      border-radius: 6px;
+      z-index: 2;
+    }
+
+    .card-thumb {
+      width: 100%;
+      height: 165px;
+      overflow: hidden;
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.2rem;
+    }
+
+    .card-body p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-tag {
+      margin-top: auto;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      border-top: 1px dashed #fae6d2;
+      padding-top: 0.6rem;
+    }
+
+    /* --- GOOGLE REVIEWS SECTION --- */
+    .reviews-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .review-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.2rem;
+      border: 1px solid #fae6d2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .reviewer-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.6rem;
+    }
+
+    .reviewer-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #ffebe6;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .reviewer-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .review-stars {
+      color: #f59e0b;
+      font-size: 0.8rem;
+    }
+
+    .review-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .verified-google {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 0.8rem;
+      font-size: 0.72rem;
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    /* --- STORE INFO CARD --- */
+    .store-location {
+      background: #ffffff;
+      border: 1px solid #fae6d2;
+      border-radius: 18px;
+      padding: 1.6rem;
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+    }
+
+    .store-location h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .store-location p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 550px;
+      line-height: 1.5;
+    }
+
+    .maps-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1f1d1d;
+      color: #fff;
+      padding: 0.7rem 1.3rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* --- MOBILE FLOATING DOCK --- */
+    .bottom-dock {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 28px);
+      max-width: 440px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(230, 126, 34, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border-radius: 99px;
+      padding: 7px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    .dock-call {
+      flex: 1;
+      height: 46px;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 99px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+    }
+
+    .dock-wa {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--whatsapp-color);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      text-decoration: none;
+      margin-left: 8px;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+      flex-shrink: 0;
+    }
+
+    /* --- DESKTOP TOAST NOTIFICATION --- */
+    #desktopToast {
+      visibility: hidden;
+      min-width: 300px;
+      background-color: #1f1d1d;
+      color: #fff;
+      text-align: center;
+      border-radius: 10px;
+      padding: 14px 18px;
+      position: fixed;
+      z-index: 2000;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      font-size: 0.88rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      border: 1px solid rgba(230, 126, 34, 0.6);
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    #desktopToast.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding: 2.5rem 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY TOP NAVIGATION -->
+  <nav>
+    <div class="brand-box">
+      <div class="brand-title">Sri Sai Mythri</div>
+      <div class="brand-sub">Bakes & Cakes • Suraram</div>
+    </div>
+
+    <div class="nav-actions">
+      <!-- Call Button: direct dialing on phone, toast on laptop -->
+      <a href="tel:+919908160719" class="call-btn-nav call-action-trigger" data-phone="+919908160719">
+        <i class="fa-solid fa-phone"></i> Call
+      </a>
+      <!-- WhatsApp Direct -->
+      <a href="https://wa.me/919908160719?text=Hello%20Sri%20Sai%20Mythri%20Bakes%20&%20Cakes,%20I%20would%20like%20to%20order%20cakes/bakery%20items." 
+         class="wa-btn-nav" 
+         target="_blank" 
+         aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION WITH SWIGGY & ZOMATO BUTTONS -->
+  <header class="hero">
+    <div class="status-badge">
+      <i class="fa-solid fa-clock"></i>
+      <span>Open Daily: 10:00 AM – 11:00 PM</span>
+    </div>
+    <h1>Fresh Birthday Cakes, Pastries & Bakes</h1>
+    <p>Custom theme cakes, hot oven-fresh puffs, burgers, rolls, and freshly baked breads crafted daily in Suraram, Hyderabad.</p>
+
+    <!-- Swiggy and Zomato Buttons -->
+    <div class="delivery-buttons">
+      <!-- Swiggy Order Button -->
+      <a href="https://www.swiggy.com/restaurants" target="_blank" class="partner-btn btn-swiggy">
+        <i class="fa-solid fa-utensils"></i> Order on Swiggy
+      </a>
+
+      <!-- Zomato Order Button -->
+      <a href="https://www.zomato.com/hyderabad" target="_blank" class="partner-btn btn-zomato">
+        <i class="fa-solid fa-burger"></i> Order on Zomato
+      </a>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+
+    <!-- POPULAR BAKERY ITEMS -->
+    <div class="section-title">
+      Our Specialties & Menu
+      <span>Fresh Every Day</span>
+    </div>
+
+    <div class="bakery-grid">
+
+      <!-- Item 1: Custom Birthday Cakes -->
+      <article class="product-card">
+        <span class="card-badge">Bestseller</span>
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=75" alt="Birthday Cakes">
+        </div>
+        <div class="card-body">
+          <h3>Custom Birthday & Party Cakes</h3>
+          <p>Black Forest, Butterscotch, Chocolate Truffle, and customized photo cakes made to order.</p>
+          <div class="card-tag">Egg & Eggless Available</div>
+        </div>
+      </article>
+
+      <!-- Item 2: Fresh Pastries -->
+      <article class="product-card">
+        <span class="card-badge">Daily Fresh</span>
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=500&q=75" alt="Pastries">
+        </div>
+        <div class="card-body">
+          <h3>Chilled Cream Pastries</h3>
+          <p>Soft layered slice cakes with fresh whipped cream, pineapple, and rich dark chocolate.</p>
+          <div class="card-tag">Fresh Batch Daily</div>
+        </div>
+      </article>
+
+      <!-- Item 3: Hot Puffs & Savouries -->
+      <article class="product-card">
+        <span class="card-badge">Oven Fresh</span>
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=500&q=75" alt="Bakery Puffs">
+        </div>
+        <div class="card-body">
+          <h3>Egg & Veg Puffs</h3>
+          <p>Golden, flaky pastry crust packed with spicy egg and vegetable fillings straight from the oven.</p>
+          <div class="card-tag">Hot Evening Snack</div>
+        </div>
+      </article>
+
+      <!-- Item 4: Fast Food & Burgers -->
+      <article class="product-card">
+        <span class="card-badge">Customer Pick</span>
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=75" alt="Bakery Burgers">
+        </div>
+        <div class="card-body">
+          <h3>Burgers & Rolls</h3>
+          <p>Crispy veg/chicken patties layered with cheese and house dressing in sesame buns.</p>
+          <div class="card-tag">Quick Bites</div>
+        </div>
+      </article>
+
+      <!-- Item 5: Bakery Cookies & Biscuits -->
+      <article class="product-card">
+        <span class="card-badge">Tea Time</span>
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=500&q=75" alt="Bakery Cookies">
+        </div>
+        <div class="card-body">
+          <h3>Osmania & Butter Biscuits</h3>
+          <p>Traditional Hyderabad tea-time Osmania cookies, coconut crunch, and cashew cookies.</p>
+          <div class="card-tag">Freshly Baked</div>
+        </div>
+      </article>
+
+      <!-- Item 6: Fresh Breads & Buns -->
+      <article class="product-card">
+        <span class="card-badge">Pantry Special</span>
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=75" alt="Breads and Buns">
+        </div>
+        <div class="card-body">
+          <h3>Fresh Milk Bread & Burger Buns</h3>
+          <p>Soft sandwich breads, pav, burger buns, and fruit sweet breads baked every morning.</p>
+          <div class="card-tag">Pure & Soft</div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- GOOGLE REVIEWS SECTION -->
+    <div class="section-title">
+      Customer Feedback
+      <span>⭐ Google Reviews</span>
+    </div>
+
+    <div class="reviews-container">
+
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div>
+          <div class="reviewer-top">
+            <div class="reviewer-avatar">V</div>
+            <div>
+              <div class="reviewer-name">Vamshi Krishna</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Ordered a birthday cake for my family celebration. The design and taste were fantastic! The cake was so soft, fresh, and delivered right on time."</p>
+        </div>
+        <div class="verified-google">
+          <i class="fa-brands fa-google"></i> Verified Google Review
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div>
+          <div class="reviewer-top">
+            <div class="reviewer-avatar">P</div>
+            <div>
+              <div class="reviewer-name">Pooja Sharma</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Their evening snacks, especially the egg puffs and burger buns, are always fresh and piping hot. Great local bakery near Malla Reddy Hospital!"</p>
+        </div>
+        <div class="verified-google">
+          <i class="fa-brands fa-google"></i> Verified Google Review
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div>
+          <div class="reviewer-top">
+            <div class="reviewer-avatar">A</div>
+            <div>
+              <div class="reviewer-name">Anil Reddy</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Reasonable prices and great variety in pastries and cool cakes. Very friendly staff and good cleanliness maintained."</p>
+        </div>
+        <div class="verified-google">
+          <i class="fa-brands fa-google"></i> Verified Google Review
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STORE LOCATION & GOOGLE MAPS LINK -->
+    <section class="store-location">
+      <div>
+        <h4>Sri Sai Mythri Bakes & Cakes Counter</h4>
+        <p><strong>Address:</strong> Plot 1, Uppala's Arcade, Suraram Village Rd, near Malla Reddy Hospital, Suraram, Hyderabad, Telangana 500055</p>
+        <p style="margin-top: 4px;"><strong>Hours:</strong> Open Daily: 10:00 AM – 11:00 PM</p>
+      </div>
+      <a href="https://maps.app.goo.gl/FGxxQp64Edp8NwJ98" target="_blank" class="maps-btn">
+        <i class="fa-solid fa-location-dot"></i> Open Google Maps
+      </a>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Sri Sai Mythri Bakes & Cakes. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <!-- BOTTOM MOBILE DOCK: DIRECT CALL & WHATSAPP TO 919908160719 -->
+  <aside class="bottom-dock">
+    <a href="tel:+919908160719" class="dock-call call-action-trigger" data-phone="+919908160719">
+      <i class="fa-solid fa-phone"></i>
+      <span>Call +91 99081 60719</span>
+    </a>
+    
+    <a href="https://wa.me/919908160719?text=Hello%20Sri%20Sai%20Mythri%20Bakes%20&%20Cakes,%20I%20would%20like%20to%20order%20cakes/bakery%20items." 
+       class="dock-wa" 
+       target="_blank" 
+       aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </aside>
+
+  <!-- Notification Toast for Desktop / Non-calling devices -->
+  <div id="desktopToast">📞 Please call Sri Sai Mythri Bakes at: <strong>+91 99081 60719</strong></div>
+
+  <!-- SMART CALL ROUTING JAVASCRIPT -->
+  <script>
+    function isMobilePhoneDevice() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      
+      // Match mobile phones (Android, iOS, Windows Phone)
+      const mobileRegex = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i;
+      const isTouchMobile = ('ontouchstart' in window || navigator.maxTouchPoints > 0) && window.innerWidth <= 768;
+      
+      return mobileRegex.test(userAgent) || isTouchMobile;
+    }
+
+    function handleCallClick(evt, phoneNumber) {
+      if (isMobilePhoneDevice()) {
+        // Mobile device: opens dial pad with number
+        window.location.href = 'tel:' + phoneNumber;
+      } else {
+        // Laptop / Desktop: prevents dial error and shows notification
+        evt.preventDefault();
+        
+        const toast = document.getElementById('desktopToast');
+        if (toast) {
+          toast.className = 'show';
+          setTimeout(function() {
+            toast.className = toast.className.replace('show', '');
+          }, 3500);
+        }
+      }
+    }
+
+    // Attach listeners safely via modern DOM APIs (removes inline event errors completely)
+    document.addEventListener('DOMContentLoaded', function() {
+      const callButtons = document.querySelectorAll('.call-action-trigger');
+      callButtons.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          const phone = this.getAttribute('data-phone') || '+919908160719';
+          handleCallClick(e, phone);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
